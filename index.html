@@ -1,0 +1,147 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <link rel="stylesheet" href="main.css"></link> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+    <link rel= "stylesheet" href = "index.css"/>
+    <link rel="stylesheet" href="bannerdisplaydesktop.css">
+  </head>
+
+  <!--navbar-->
+  <body>
+    <div id="entirePageGrid"> <!-- Makes a grid for nav grid and news/blog grid -->
+
+  <nav id="container" class="container"> <!-- Grid for navbar -->
+
+
+  <div class="d-flex">
+      <div class="dropdown mr-1">
+        <button type="button" id="profileBtn" class="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+          <button id="signOut" type="button"><a class="dropdown-item" href="#">Sign Out</a></button>
+          <button id="getSaved" onclick="getSavedArticles()" type="button"><a class="dropdown-item" href="#">Get Saved Articles</a></button>
+        </div>
+      </div>
+    </div>
+    <!--Information for the Zip button on navbar-->
+    <div class="dropdownIconZip">
+      <button id="zipcodedrop" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Change Zip</button>
+      <div class="dropdown-menu" aria-labelledby="zipcodedrop">
+      <form class="px-4 py-3">
+          <div class="form-group">
+            <label for="zipInput">Zip Code</label>
+            <input type="text" id="zipInput" placeholder="Enter Zip Code"/>
+          </div>
+          <button type="button" id="submitBtn">Enter</button>
+        </form> <!-- Make sure you are closing your html elements -->
+      </div>
+  </div>
+
+
+
+    <!-- Information for the sign in button -->
+    <div class="dropdownIconLogIn">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="signInMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign In</button>
+          <div class="dropdown-menu" aria-labelledby="signInMenu">
+               <form class="px-4 py-3">
+                   <div class="form-group">
+                     <label for="exampleDropdownFormEmail1">Email address</label><br>
+                     <input id="signInEmailAddress" placeholder="email@example.com"></input>
+                   </div>
+                   <div class="form-group">
+                     <label for="exampleDropdownFormPassword1">Password</label><br>
+                     <input id="signInPassword" type="password" placeholder="Password"></input>
+                   </div>
+                   <button id="signInUser">Sign In</button>
+               </form>
+           </div>
+  </div>
+
+  <div class="dropdownIconSignUp">
+          <button type="button" class=" btn btn-secondary dropdown-toggle" id="signUpMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Join</button>
+
+          <!-- Information for the Join button. -->
+
+          <div class="dropdown-menu" aria-labelledby="signUpMenu">
+              <form class="px-4 py-3">
+                  <div class="form-group">
+                    <label for="exampleDropdownFormEmail1">Email address</label><br>
+                    <input id="signUpEmailAddress" placeholder="email@example.com"></input>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleDropdownFormPassword1">Password</label><br>
+                    <input id="signUpPassword" type="password" placeholder="Password"></input>
+                  </div>
+                  <button id="signUpUser">Sign Up</button>
+              </form>
+          </div>
+      </div>
+  </nav>
+
+  <!-- Weather app display -->
+  <div id="weatherDivStyling" class="weatherDivStyling">
+    <ul id="weather">
+    </ul>
+  </div>
+
+  <!-- Img Div -->
+  <div id="skylineDisplay" class="skylineDisplay">
+  <image id="skylinepic" src="skyline.jpeg"></image>
+</div>
+
+<div id="newsBlogWeatherGrid" class="newsBlogWeatherGrid">
+
+<!-- News Div-->
+<div class="containerForNews">
+<div id="currentNewsDisplay" class="currentNewsDisplay">
+  <h4>Local News</h4>
+<div class="scrolling-wrapper-flexbox" id="news">
+</div>
+</div>
+<div class="responsiveSavedArticlesDisplay">
+  <h4>Saved Articles</h4>
+  <div id="articlesUL" class="scrolling-wrapper-flexbox">
+  </div>
+</div> <!-- closes responsiveSavedArticlesDisplay -->
+</div> <!-- closes containerForNews -->
+
+
+<!-- Blog Div -->
+<span id="allBlogDisplay" class="allBlogDisplay">
+  <div id="blogDisplay" class="blogDisplay">
+    <h4>Houston Happenings</h4>
+    <div class="scrolling-wrapper-flexbox" id="blog">
+    </div>
+  </div>
+  <!-- Blog Entry -->
+  <div id="blogEntry" class="blogEntryDisplay">
+  </div>
+</span>
+</div>
+</div>
+</div> <!-- closes newsBWGrid -->
+
+  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAKoESWbLwStYP27votqibe8szVSaM3w_0",
+      authDomain: "houstonnewsweather.firebaseapp.com",
+      databaseURL: "https://houstonnewsweather.firebaseio.com",
+      projectId: "houstonnewsweather",
+      storageBucket: "gs://houstonnewsweather.appspot.com/",
+      messagingSenderId: "851812061365"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+    <script src="classes.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    </body>
+    </html>

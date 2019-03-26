@@ -1,0 +1,473 @@
+/* FULL PAGE START */
+#entirePageGrid {
+  display: grid;
+  grid-template-columns: [first] 100% [end];
+  grid-template-rows: [row1] 3.91187rem [row2] 3rem [row3] 12.015625rem [row4] auto [end];
+  align-items: stretch;
+}
+#entirePageGrid .container {
+  grid-column-start: first;
+  grid-column-end: end;
+  grid-row-start: row1;
+  grid-row-end: end;
+  /* align-self: stretch; */
+  max-width: 100%;
+}
+#entirePageGrid .weatherDivStyling {
+  grid-column-start: first;
+  grid-column-end: span 1;
+  grid-row-start: row2;
+  grid-row-end: span 1;
+  /* padding-top: 1%; */
+}.blog { height:100px;
+    width :100px;
+}
+#entirePageGrid .skylineDisplay {
+  grid-column-start: first;
+  grid-column-end: end;
+  grid-row-start: row3;
+  grid-row-end: span 1;
+  padding-bottom: 10px;
+}
+#entirePageGrid .newsBlogWeatherGrid {
+  grid-column-start: first;
+  grid-column-end: end;
+  grid-row-start: row4;
+  grid-row-end: end;
+}
+/* FULL PAGE END */
+/* NAVBAR DISPLAY START */
+#container{
+  display: grid;
+  grid-template-columns: [first] 50px [second] auto [third] 126.15px [fourth] 90px [fifth] 73px [end];
+  grid-template-rows: [row1-start] 25% [row1-end] auto;
+  background-color: black;
+  padding: 0.5rem;
+  text-align: right;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+#container .d-flex {
+  grid-column-start: first;
+  grid-column-end: span 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+
+#container .dropdownIconZip{
+  grid-column-start: third;
+  grid-column-end: span 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  justify-self: start;
+}
+
+#container .dropdownIconLogIn {
+  grid-column-start: fourth;
+  grid-column-end: span 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+#container .dropdownIconSignUp {
+  grid-column-start: fifth;
+  grid-column-end: span 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+/* NAVBAR DISPLAY END */
+/* NEWS BLOG WEATHER GRID DISPLAY START  */
+#newsBlogWeatherGrid {
+  display: grid;
+  grid-template-columns: [first] 5% [second] 27% [third] 5% [fourth] 58% [fifth] 5% [end];
+  grid-template-rows: [row1-start] 100% [row1-end] auto;
+}
+#newsBlogWeatherGrid .containerForNews { /* =========================================================== */
+  grid-column-start: second;
+  grid-column-end: span 1;
+  grid-row-start: row1;
+  grid-row-end: end;
+}
+#newsBlogWeatherGrid .allBlogDisplay {
+  grid-column-start: fourth;
+  grid-column-end: span 1;
+  grid-row-start: row1;
+  grid-row-end: end;
+}
+#weather {
+  padding-left: 0;
+}
+/* NEWS BLOG WEATHER GRID DISPLAY END  */
+.btn-secondary{
+  border-radius: 4px;
+  padding: .375rem .75rem;
+}
+
+.btn{
+  padding-top:5px;
+  vertical-align:baseline;
+}
+
+#profileBtn{
+  float: left;
+  width: 50px;
+  height: 50px;
+  background: url("images.png") no-repeat;
+  background-size: 48px;
+  border-radius: 25px;
+}
+
+#signOut{
+  border: 0px;
+}
+
+#getSaved{
+  border: 0px;
+}
+
+#skylinepic{
+  width: 100%;
+  /* height: auto; */
+  max-height: 100%;
+}
+
+.round-image {
+  border-radius:50%;
+  height: 100px;
+  width: 100px;
+}
+.row {
+  padding-left: 1.5rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.row p {
+  padding-top: 10px;
+  padding-bottom: 15px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-right: 1px solid black;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+#icon {
+  width: 50px;
+  height: 50px
+}
+@media (min-width: 577px){
+cardScroll {
+
+  flex: 0 0 auto;
+  margin-bottom: 3px;
+  border: 2px solid #B0B7BC;
+  width: 100%;
+  height: auto;
+  background: white;
+  color: black;
+  font-size:0.8em;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  z-index: 0;
+}
+}
+@media (max-width: 576px){
+.cardScroll {
+  position: relative;
+  flex: 0 0 auto;
+  margin-bottom: 3px;
+  border: 2px solid #B0B7BC;
+  width: 100%;
+  height: auto;
+  background: white;
+  color: black;
+  font-size:0.8em;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  z-index: 0;
+}
+}
+.cardScroll img {
+  vertical-align: middle;
+}
+
+.cardBlog {
+
+  flex: 0 0 auto;
+  margin-bottom: 3px;
+  border: 2px solid #B0B7BC;
+  width: 100%;
+  height: 400px;
+  background: white;
+  color: black;
+  font-size:0.8em;
+  text-align: center;
+  overflow-x: hidden;
+  vertical-align: middle;
+  z-index: 0;
+}
+/* Saved Articles Display */
+.savedNewsDisplay {
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+}
+#articlesUL {
+  list-style: none;
+}
+@media (min-width: 577px){
+#savedArticleLink {
+  width: 70%;
+  float: left;
+  display: inline-block;
+
+}
+}
+@media (max-width: 576px){
+  #deleteSavedArticleButton {
+    float: none;
+    width: 60%;
+    display: flex;
+    background-color: #002244;
+    position:absolute;
+    bottom: 10px;
+    right:25%;
+    border-radius: 15%;
+     color: #B0B7BC;
+  
+  }
+}
+@media (min-width: 577px){
+#deleteSavedArticleButton {
+  float: right;
+  width: 30%;
+  display: inline-block;
+  background-color: #002244;
+  border-radius: 15%;
+  color: #B0B7BC
+}
+}
+/* Local News Articles Display */
+.newsLink {
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+}
+@media (min-width: 577px){
+#articleSaveBtn {
+  float: right;
+  width: 30%;
+  display: inline-block;
+  background-color: #002244;
+  border-radius: 15%;
+  color: #B0B7BC;
+}
+
+}
+
+@media (max-width: 576px){
+#articleSaveBtn {
+  float: none;
+  width: 50%;
+  display: flex;
+  background-color: #002244;
+  position:absolute;
+  bottom: 10px;
+  right:35%;
+  border-radius: 15%;
+  color: #B0B7BC
+
+
+}
+}
+@media (min-width: 577px){
+#saveLink {
+  width: 70%;
+  float: left;
+  display: inline-block;
+}
+}
+.comments li {
+  list-style-type: none;
+}
+
+.comments {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+#commentSpace {
+  z-index: 0;
+}
+
+#articlesUL li {
+  list-style-type: none;
+}
+
+input {
+  border-width: thin;
+  border-color: #f2f2f2;
+  width: 90%;
+  align-self: center;
+}
+
+#titleSpace {
+  z-index: 1;
+}
+
+.title {
+  text-align: left;
+}
+
+.alignSelf {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+}
+
+.commentTextBox {
+  margin: 5px;
+}
+
+/* mobile for news and blog display ================================================================================== */
+@media (max-width: 576px) {
+  #entirePageGrid {
+    display: grid;
+    grid-template-columns: [first] 100% [end];
+    grid-template-rows: [row1] 3.91187rem [row2] 3rem [row3] 8rem [row4] auto [end];
+    align-items: stretch;
+  }
+
+#container{
+  display: grid;
+  grid-template-columns: [first] 50px [third] 126.15px [fourth] 90px [fifth] 73px [end];
+  grid-template-rows: [row1-start] 25% [row1-end] auto;
+  background-color: black;
+  padding: 1%;
+  text-align: right;
+  position: fixed;
+  width: 100%;
+}
+
+.scrolling-wrapper-flexbox {
+  max-height: 90%;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  margin-bottom: 20px;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+
+
+}
+
+.cardScroll {
+  flex: 0 0 auto;
+  margin-right: 3px;
+  border: 2px solid gray;
+  width: 130px;
+  height: 200px;
+  background: white;
+  color: white;
+  font-size:0.8em;
+  text-align: center;
+  z-index: 0;
+}
+/*
+.cardScroll img {
+  display: none;
+} */
+
+.cardBlog {
+  width: 300px;
+}
+
+#newsBlogWeatherGrid {
+  display: grid;
+  grid-template-columns: [first] 5% [second] 90% [third] 5% [end];
+  grid-template-rows: [first] 524px [second] auto [end];
+}
+#newsBlogWeatherGrid .containerForNews {
+  grid-column-start: second;
+  grid-column-end: span 1;
+  grid-row-start: first;
+  grid-row-end: span 1;
+}
+#newsBlogWeatherGrid .currentNewsDisplay {
+  grid-column-start: second;
+  grid-column-end: span 1;
+  grid-row-start: first;
+  grid-row-end: span 1;
+}
+#newsBlogWeatherGrid .allBlogDisplay {
+  grid-column-start: second;
+  grid-column-end: span 1;
+  grid-row-start: third;
+  grid-row-end: span 1;
+}
+#newsBlogWeatherGrid .responsiveSavedArticlesDisplay {
+  grid-column-start: second;
+  grid-column-end: span 1;
+  grid-row-start: second;
+  grid-row-end: span 1;
+}
+
+.hideContent{
+  display: none;
+}
+
+.row p{
+  border-right: none;
+}
+}
+.btn-primary{
+  color:#B0B7BC;
+  background-color:#002244;
+}
+
+a {
+  color: #002244;
+}
+#table {
+  border :1px solid #B0B7BC;
+  border-radius: 5px;
+  background-color: #B0B7BC;
+  padding: 100px;
+  position: relative;
+}
+#titleEntry{
+  position: absolute;
+  top:10px;
+  left:10px;
+
+
+}
+#imageEntry{
+  position: absolute;
+  top:40px;
+  
+  left:10px;
+}
+
+#contentEntry{
+  position: absolute;
+  bottom:10px;
+  right:10px;
+}
+
+#blogEntryBtn{
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+
+}
+#uploader {
+  position: relative;
+  bottom: 30px;
+  right: 90px;
+
+}
