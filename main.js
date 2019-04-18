@@ -105,7 +105,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 
     function adminCheck() {
       if (user != null) {
-        if (user.uid == "78I5hgvWUzVGLpfNUOzEOyTlH8F3" || "FCIAB6mUByZ0w7EHOswbpBxk1n32" || "WoascjVSpNYYB9pFUgbNGvuswor1" || "q9pJhA6Y1DazyvwfIZ3uz66Wz6E2") {
+        if (user.uid =="PZJ55Pl5xwTVDsTiS8P9fQsnm3J3") {
           admin = "True"
           blogEntry()
           return user.uid
